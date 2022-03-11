@@ -6,9 +6,9 @@
 
 ## Pull Requests
 
-> [Singly Linked List PR](../README.md)
+> [Singly Linked List PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/4)
 
-> [Doubly & Singly Linked Lists PR](../README.md)
+> [Doubly & Singly Linked Lists PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/5)
 
 ---
 
