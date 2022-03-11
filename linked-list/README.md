@@ -1,11 +1,19 @@
-# Singly Linked List
+# Singly and Doubly Linked Lists
 
 > [Back to main](../README.md)
 
 ---
 
-A singly linked list project that can create linked lists and nodes.
-It also can append, insert, and print nodes from a linked list. 
+## Pull Requests
+
+> [Singly Linked List PR](../README.md)
+
+> [Doubly & Singly Linked Lists PR](../README.md)
+
+---
+
+A singly and doubly linked lists project that can create linked lists and nodes.
+It also can append, insert, delete, reverse, slice, and print nodes from a linked list. 
 
 ---
 
