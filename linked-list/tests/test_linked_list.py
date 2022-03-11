@@ -1,5 +1,5 @@
 import pytest
-from linked_list.linked_list import LinkedList, Node
+from linked_list.linked_list import Node, LinkedList, DoublyNode, DoublyLinkedList
 
 
 #============================================
@@ -47,21 +47,6 @@ def test_appending_to_linked_list(my_linked_list):
     assert str(my_linked_list) == "Mustafa -> Zaid -> Ammar -> Barham -> NULL"
 
 
-def test_deleting_a_head(my_linked_list):
-    my_linked_list.Delete("Mustafa")
-    assert str(my_linked_list) == "Zaid -> Ammar -> NULL"
-
-
-def test_deleting_a_middle_node(my_linked_list):
-    my_linked_list.Delete("Zaid")
-    assert str(my_linked_list) == "Mustafa -> Ammar -> NULL"
-
-
-def test_deleting_the_last_node(my_linked_list):
-    my_linked_list.Delete("Ammar")
-    assert str(my_linked_list) == "Mustafa -> Zaid -> NULL"
-
-
 def test_providing_not_node_instance_for_insert_method(my_linked_list):
     my_linked_list.Insert("Barham")
     assert str(my_linked_list) == "Barham -> Mustafa -> Zaid -> Ammar -> NULL"
@@ -96,6 +81,21 @@ def test_replacing_the_last_node_with_another_node(my_linked_list):
     assert str(my_linked_list) == "Mustafa -> Zaid -> Barham -> NULL"
 
 
+def test_deleting_the_head(my_linked_list):
+    my_linked_list.Delete("Mustafa")
+    assert str(my_linked_list) == "Zaid -> Ammar -> NULL"
+
+
+def test_deleting_a_middle_node(my_linked_list):
+    my_linked_list.Delete("Zaid")
+    assert str(my_linked_list) == "Mustafa -> Ammar -> NULL"
+
+
+def test_deleting_the_last_node(my_linked_list):
+    my_linked_list.Delete("Ammar")
+    assert str(my_linked_list) == "Mustafa -> Zaid -> NULL"
+
+
 def test_slicing_the_linked_list(my_long_linked_list):
     new_list = my_long_linked_list.Slice(From="Zaid", To="Barham")
     assert str(new_list) == "Zaid -> Ammar -> Barham -> NULL"
@@ -109,6 +109,50 @@ def test_slicing_the_linked_list_from_the_head(my_long_linked_list):
 def test_slicing_the_linked_list_to_the_end(my_long_linked_list):
     new_list = my_long_linked_list.Slice(From="Barham", To="Husain")
     assert str(new_list) == "Barham -> Imad -> Husain -> NULL"
+
+
+
+#==========================================
+#===========    Streach goal    ===========
+#==========================================
+
+
+def test_doubly_linked_list_ToString_meyhod(my_doubly_linked_list):
+    my_doubly_linked_list.ToString()
+    assert str(my_doubly_linked_list) == "NULL <- Mustafa <-> Zaid <-> Ammar -> NULL"
+
+
+def test_doubly_linked_list_Insert_meyhod(my_doubly_linked_list):
+    my_doubly_linked_list.Insert("Barham")
+    assert str(my_doubly_linked_list) == "NULL <- Barham <-> Mustafa <-> Zaid <-> Ammar -> NULL"
+
+
+def test_doubly_linked_list_Append_meyhod(my_doubly_linked_list):
+    my_doubly_linked_list.Append("Barham")
+    assert str(my_doubly_linked_list) == "NULL <- Mustafa <-> Zaid <-> Ammar <-> Barham -> NULL"
+
+
+def test_doubly_linked_list_Includes_meyhod(my_doubly_linked_list):
+    assert my_doubly_linked_list.Includes("Zaid") == True
+
+
+def test_doubly_linked_list_Includes_meyhod(my_doubly_linked_list):
+    assert my_doubly_linked_list.Includes("Husain") == False
+    
+
+def test_doubly_linked_list_Replace_meyhod(my_doubly_linked_list):
+    my_doubly_linked_list.Replace("Zaid", "Barham")
+    assert str(my_doubly_linked_list) == "NULL <- Mustafa <-> Barham <-> Ammar -> NULL"
+
+
+def test_doubly_linked_list_Delete_meyhod(my_doubly_linked_list):
+    my_doubly_linked_list.Delete("Zaid")
+    assert str(my_doubly_linked_list) == "NULL <- Mustafa <-> Ammar -> NULL"
+
+
+def test_doubly_linked_list_Slice_meyhod(my_long_doubly_linked_list):
+    new_list = my_long_doubly_linked_list.Slice(From="Zaid", To="Barham")
+    assert str(new_list) == "NULL <- Zaid <-> Ammar <-> Barham -> NULL"
 
 
 #======================================
@@ -128,4 +172,18 @@ def my_long_linked_list():
     ll = LinkedList()
     [ll.Append(Node(i)) for i in ["Mustafa", "Zaid", "Ammar", "Barham", "Imad", "Husain"]]
     return ll
+
+
+@pytest.fixture
+def my_doubly_linked_list():    
+    dll = DoublyLinkedList()
+    [dll.Append(DoublyNode(i)) for i in ["Mustafa", "Zaid", "Ammar"]]
+    return dll
+
+
+@pytest.fixture
+def my_long_doubly_linked_list():    
+    dll = DoublyLinkedList()
+    [dll.Append(DoublyNode(i)) for i in ["Mustafa", "Zaid", "Ammar", "Barham", "Imad", "Husain"]]
+    return dll
 

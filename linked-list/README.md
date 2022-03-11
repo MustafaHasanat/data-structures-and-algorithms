@@ -21,11 +21,20 @@ Add functions that can append, insert, and print nodes from a linked list.
 I created (Node) class which takes a value of any type as an argument and have a pointer of (None) type as default.
 I also created (LinkedList) class which takes no arguments and create an empty linked list. 
 
+Then I created (DoublyNode) class which takes a value of any type as an argument and have a pointer of (DoublyNone) type as default.
+I also created (DoublyLinkedList) class which takes no arguments and create an empty doubly linked list. 
+
+---
+
+## Streatch Goal
+
+Implement a doubly linked list (completely separate from your singly linked list).
+
 ---
 
 ## API
 
-### Class (LinkedList) has these methods:
+### Classes (LinkedList) and (DoublyLinkedList) each one has these methods:
 
 - **ToString(self)**:
 
