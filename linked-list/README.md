@@ -71,4 +71,8 @@ Implement a doubly linked list (completely separate from your singly linked list
     This function slices the linked list from the node (From) till the node (To) and returns a new linked list that contains the nodes from the (From) node to the (To) node.
     Both (From) and (To) can be either (Node) instances or any other type, because the method will turn everything to a (Node) instance if it wasn't. 
 
+- **Reverse(self)**:
+
+    This function reverse the order of the list then return a new list.
+
 ---

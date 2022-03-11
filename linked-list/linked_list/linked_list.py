@@ -1,3 +1,4 @@
+
 class Node:
     """
     This class is used to create a node that will be
@@ -49,10 +50,11 @@ class LinkedList:
             output = "None"
         else:
             current = self.head
-            while current:
+            while current is not None:
                 output += f"{current.value} -> "
                 current = current.pointer
             output += "NULL"
+
         return output
 
 
@@ -283,6 +285,25 @@ class LinkedList:
 
         else:
             raise Exception("Both parameters \'From\' and \'To\' must be defined and must not be (None) !")
+
+
+    def Reverse(self):
+        """
+        This function reverse the order of the list
+        then return a new list.
+        """
+
+        reverse = LinkedList()
+
+        if self.head is None:
+            return reverse
+        
+        current = self.head
+        while current is not None:
+            reverse.Insert(current.value)
+            current = current.pointer
+
+        return reverse
 
 
 #==============================================
@@ -582,5 +603,26 @@ class DoublyLinkedList:
             raise Exception("Both parameters \'From\' and \'To\' must be defined and must not be (None) !")
 
 
+    def Reverse(self):
+        """
+        This function reverse the order of the list
+        then return a new list.
+        """
+
+        reverse = DoublyLinkedList()
+
+        if self.head is None:
+            return reverse
+        
+        current = self.head
+        while current is not None:
+            reverse.Insert(current.value)
+            current = current.n_pointer
+
+        return reverse
+
+
+
 if __name__ == "__main__":
     pass
+

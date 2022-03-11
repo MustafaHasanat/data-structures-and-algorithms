@@ -111,6 +111,10 @@ def test_slicing_the_linked_list_to_the_end(my_long_linked_list):
     assert str(new_list) == "Barham -> Imad -> Husain -> NULL"
 
 
+def test_reversing_the_linked_list(my_linked_list):
+    new_list = my_linked_list.Reverse()
+    assert str(new_list) == "Ammar -> Zaid -> Mustafa -> NULL"
+
 
 #==========================================
 #===========    Streach goal    ===========
@@ -155,13 +159,18 @@ def test_doubly_linked_list_Slice_meyhod(my_long_doubly_linked_list):
     assert str(new_list) == "NULL <- Zaid <-> Ammar <-> Barham -> NULL"
 
 
+def test_doubly_linked_list_Reverse_meyhod(my_doubly_linked_list):
+    new_list = my_doubly_linked_list.Reverse()
+    assert str(new_list) == "NULL <- Ammar <-> Zaid <-> Mustafa -> NULL"
+
+
 #======================================
 #===========    Fixtures    ===========
 #======================================
 
 
 @pytest.fixture
-def my_linked_list():    
+def my_linked_list():
     ll = LinkedList()
     [ll.Append(Node(i)) for i in ["Mustafa", "Zaid", "Ammar"]]
     return ll
