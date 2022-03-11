@@ -1,11 +1,19 @@
-# Singly Linked List
+# Singly and Doubly Linked Lists
 
 > [Back to main](../README.md)
 
 ---
 
-A singly linked list project that can create linked lists and nodes.
-It also can append, insert, and print nodes from a linked list. 
+## Pull Requests
+
+> [Singly Linked List PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/4)
+
+> [Doubly & Singly Linked Lists PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/5)
+
+---
+
+A singly and doubly linked lists project that can create linked lists and nodes.
+It also can append, insert, delete, reverse, slice, and print nodes from a linked list. 
 
 ---
 
@@ -21,11 +29,20 @@ Add functions that can append, insert, and print nodes from a linked list.
 I created (Node) class which takes a value of any type as an argument and have a pointer of (None) type as default.
 I also created (LinkedList) class which takes no arguments and create an empty linked list. 
 
+Then I created (DoublyNode) class which takes a value of any type as an argument and have a pointer of (DoublyNone) type as default.
+I also created (DoublyLinkedList) class which takes no arguments and create an empty doubly linked list. 
+
+---
+
+## Streatch Goal
+
+Implement a doubly linked list (completely separate from your singly linked list).
+
 ---
 
 ## API
 
-### Class (LinkedList) has these methods:
+### Classes (LinkedList) and (DoublyLinkedList) each one has these methods:
 
 - **ToString(self)**:
 
@@ -61,5 +78,9 @@ I also created (LinkedList) class which takes no arguments and create an empty l
 
     This function slices the linked list from the node (From) till the node (To) and returns a new linked list that contains the nodes from the (From) node to the (To) node.
     Both (From) and (To) can be either (Node) instances or any other type, because the method will turn everything to a (Node) instance if it wasn't. 
+
+- **Reverse(self)**:
+
+    This function reverse the order of the list then return a new list.
 
 ---
