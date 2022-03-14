@@ -12,6 +12,12 @@
 
 ---
 
+## Challenge 06 Summary
+
+> [Challenge 06](./whiteboards/README.md)
+
+---
+
 A singly and doubly linked lists project that can create linked lists and nodes.
 It also can append, insert, delete, reverse, slice, and print nodes from a linked list. 
 
@@ -48,11 +54,17 @@ Implement a doubly linked list (completely separate from your singly linked list
 
     This function represents the Linked List as a concatonated string that has all its nodes 
 
-- **Insert(self, value, after_node=None)**:
+- **Insert(self, value)**:
 
-    This function inserts a value at the (beginning) of the linked list if the argument (after_node) wasn't provided.
-    Otherwise, it will insert the (value) after the provided node value (after_node)
-    Both (value) and (after_node) can be either (Node) instances or any other type, because the method will turn to a (Node) instance if it wasn't. 
+    This function inserts a value at the (beginning) of the linked list
+
+- **InsertBefore(self, new_value, value)**:
+
+    This function inserts the (new value) before the (value) of the linked list if it does exist
+
+- **InsertAfter(self, new_value, value)**:
+    
+    This function inserts the (new value) after the (value) of the linked list if it does exist
 
 - **Includes(self, value)**:
 
