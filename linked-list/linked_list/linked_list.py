@@ -27,6 +27,9 @@ class LinkedList:
     represents the first node in the linked list
     """
 
+    def __init__(self):
+        pass
+
 #==============================================
 #===========    Required methods    ===========
 #==============================================
@@ -108,11 +111,9 @@ class LinkedList:
 
             return False
 
-
 #===================================================
 #===========    Challenge 06 methods    ============
 #===================================================
-
 
     def Append(self, value):
         """
@@ -140,7 +141,7 @@ class LinkedList:
                 current.pointer = value
 
 
-    def InsertBefore(self, new_value, value):
+    def InsertBefore(self, value, new_value):
         """
         This function inserts the (new value) before the 
         (value) of the linked list if it does exist
@@ -170,7 +171,7 @@ class LinkedList:
             current = current.pointer
 
 
-    def InsertAfter(self, new_value, value):
+    def InsertAfter(self, value, new_value):
         """
         This function inserts the (new value) after the 
         (value) of the linked list if it does exist
@@ -228,6 +229,55 @@ class LinkedList:
                     return 0
                 current = current.pointer
     
+#===================================================
+#===========    Challenge 07 methods    ============
+#===================================================
+
+    def kthFromEnd(self, k):
+        """
+        This function returns the value of the kth node 
+        start counting from the end of teh list 
+        """
+
+        if type(k) != int:
+            raise Exception("The provided value must be an integer !")
+
+        if k < 0:
+            raise Exception("The provided value must be a positive integer !")
+
+        length = self.Length()
+        
+        if (length == 0) or (self.head is None):
+            raise Exception("The list is empty !") 
+
+        if k > length-1:
+            raise Exception("Index is out of range !")
+
+        k = length - k - 1
+        current_index = 0
+        current = self.head
+
+        while current is not None:
+            if current_index == k:
+                return current.value
+            current_index += 1
+            current = current.pointer
+
+
+    def Length(self):
+        """
+        This function returns the number of nodes in the list
+        """
+
+        if self.head is None:
+            return 0
+        else:
+            nodes, current = 0, self.head
+            while current is not None:
+                current = current.pointer
+                nodes += 1
+            else:
+                return nodes
 
 #================================================
 #===========    Additional methods    ===========
@@ -340,11 +390,9 @@ class LinkedList:
 
         return reverse
 
-
 #==============================================
 #===========    Streach goal    ===============
 #==============================================
-
 
 class DoublyNode:
     """
@@ -658,5 +706,7 @@ class DoublyLinkedList:
 
 
 if __name__ == "__main__":
-    pass
+    ll = LinkedList()
+    [ll.Append(i) for i in ["Mustafa", "Ammar", "Barham"]]
+    print(ll.kthFromEnd(3))
 

@@ -2,6 +2,9 @@
 
 > [Back to main](../README.md)
 
+A singly and doubly linked lists project that can create linked lists and nodes.
+It also can append, insert, delete, reverse, slice, and print nodes from a linked list. 
+
 ---
 
 ## Pull Requests
@@ -14,12 +17,13 @@
 
 ## Challenge 06 Summary
 
-> [Challenge 06](./whiteboards/README.md)
+> [Challenge 06](./Challenge6/README.md)
 
 ---
 
-A singly and doubly linked lists project that can create linked lists and nodes.
-It also can append, insert, delete, reverse, slice, and print nodes from a linked list. 
+## Challenge 07 Summary
+
+> [Challenge 07](./Challenge7/README.md)
 
 ---
 
