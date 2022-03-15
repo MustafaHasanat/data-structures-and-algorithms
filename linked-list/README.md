@@ -13,6 +13,8 @@ It also can append, insert, delete, reverse, slice, and print nodes from a linke
 
 > [Doubly & Singly Linked Lists PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/5)
 
+> [Kth element](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/7)
+
 ---
 
 ## Challenge 06 Summary
