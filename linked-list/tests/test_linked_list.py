@@ -38,7 +38,7 @@ def test_returning_all_values_in_linked_list(my_linked_list):
 
 
 #==============================================
-#===========    Additional Tests    ===========
+#===========    Challenge 06 tests   ==========
 #==============================================
 
 
@@ -47,38 +47,29 @@ def test_appending_to_linked_list(my_linked_list):
     assert str(my_linked_list) == "Mustafa -> Zaid -> Ammar -> Barham -> NULL"
 
 
-def test_providing_not_node_instance_for_insert_method(my_linked_list):
-    my_linked_list.Insert("Barham")
-    assert str(my_linked_list) == "Barham -> Mustafa -> Zaid -> Ammar -> NULL"
-
-
 def test_providing_not_node_instance_for_append_method(my_linked_list):
     my_linked_list.Append("Barham")
     assert str(my_linked_list) == "Mustafa -> Zaid -> Ammar -> Barham -> NULL"
 
 
-def test_providing_a_node_instance_for_includes_method(my_linked_list):
-    assert my_linked_list.Includes(Node("Zaid")) == True
+def test_inserting_a_node_before_a_specific_other_node(my_linked_list):
+    my_linked_list.InsertBefore("Barham", "Zaid")
+    assert str(my_linked_list) == "Mustafa -> Barham -> Zaid -> Ammar -> NULL"
+
+
+def test_inserting_a_node_before_the_head(my_linked_list):
+    my_linked_list.InsertBefore("Barham", "Mustafa")
+    assert str(my_linked_list) == "Barham -> Mustafa -> Zaid -> Ammar -> NULL"
+
+
+def test_inserting_a_node_after_the_last_node(my_linked_list):
+    my_linked_list.InsertAfter("Barham", "Ammar")
+    assert str(my_linked_list) == "Mustafa -> Zaid -> Ammar -> Barham -> NULL"
 
 
 def test_inserting_a_node_after_a_specific_other_node(my_linked_list):
-    my_linked_list.Insert("Barham", after_node="Zaid")
+    my_linked_list.InsertAfter("Barham", "Zaid")
     assert str(my_linked_list) == "Mustafa -> Zaid -> Barham -> Ammar -> NULL"
-
-
-def test_replacing_the_head_with_another_node(my_linked_list):
-    my_linked_list.Replace("Mustafa", "Barham")
-    assert str(my_linked_list) == "Barham -> Zaid -> Ammar -> NULL"
-
-
-def test_replacing_a_node_in_the_middle_with_another_node(my_linked_list):
-    my_linked_list.Replace("Zaid", "Barham")
-    assert str(my_linked_list) == "Mustafa -> Barham -> Ammar -> NULL"
-
-
-def test_replacing_the_last_node_with_another_node(my_linked_list):
-    my_linked_list.Replace("Ammar", "Barham")
-    assert str(my_linked_list) == "Mustafa -> Zaid -> Barham -> NULL"
 
 
 def test_deleting_the_head(my_linked_list):
@@ -94,6 +85,35 @@ def test_deleting_a_middle_node(my_linked_list):
 def test_deleting_the_last_node(my_linked_list):
     my_linked_list.Delete("Ammar")
     assert str(my_linked_list) == "Mustafa -> Zaid -> NULL"
+
+
+#==============================================
+#===========    Additional Tests    ===========
+#==============================================
+
+
+def test_providing_not_node_instance_for_insert_method(my_linked_list):
+    my_linked_list.Insert("Barham")
+    assert str(my_linked_list) == "Barham -> Mustafa -> Zaid -> Ammar -> NULL"
+
+
+def test_providing_a_node_instance_for_includes_method(my_linked_list):
+    assert my_linked_list.Includes(Node("Zaid")) == True
+
+
+def test_replacing_the_head_with_another_node(my_linked_list):
+    my_linked_list.Replace("Mustafa", "Barham")
+    assert str(my_linked_list) == "Barham -> Zaid -> Ammar -> NULL"
+
+
+def test_replacing_a_node_in_the_middle_with_another_node(my_linked_list):
+    my_linked_list.Replace("Zaid", "Barham")
+    assert str(my_linked_list) == "Mustafa -> Barham -> Ammar -> NULL"
+
+
+def test_replacing_the_last_node_with_another_node(my_linked_list):
+    my_linked_list.Replace("Ammar", "Barham")
+    assert str(my_linked_list) == "Mustafa -> Zaid -> Barham -> NULL"
 
 
 def test_slicing_the_linked_list(my_long_linked_list):

@@ -58,16 +58,10 @@ class LinkedList:
         return output
 
 
-    def Insert(self, value, after_node=None):
+    def Insert(self, value):
         """
         This function inserts a value at the (beginning) of the 
-        linked list if the argument (after_node) wasn't provided.
-        Otherwise, it will insert the (value) after the provided node
-        value (after_node) 
-
-        Both (value) and (after_node) can be either (Node) instances or
-        any other type, because the method will turn everything to a 
-        (Node) instance if it wasn't. 
+        linked list
         """
         
         if value is None:
@@ -78,30 +72,11 @@ class LinkedList:
 
         if self.head is None:
             self.head = value
-        
         else:
-            if after_node is None:
-                value.pointer = self.head
-                self.head = value
-            
-            else:
-                if not isinstance(after_node, Node):
-                    after_node = Node(after_node)
-                current = self.head
+            value.pointer = self.head
+            self.head = value
 
-                while current.pointer is not None:
-                    if current.value == after_node.value:
-                        value.pointer, current.pointer = current.pointer, value
-                        return 0
-                    current = current.pointer
-                else:            
-                    if current.value == after_node.value:
-                        value.pointer, current.pointer = current.pointer, value
-                        return 0
-                
-                raise Exception(f"The linked list has no value named \'{after_node}\' !")
-                
-                
+
     def Includes(self, value):
         """
         This function checks if the provided value is 
@@ -134,9 +109,9 @@ class LinkedList:
             return False
 
 
-#================================================
-#===========    Additional methods    ===========
-#================================================
+#===================================================
+#===========    Challenge 06 methods    ============
+#===================================================
 
 
     def Append(self, value):
@@ -164,6 +139,99 @@ class LinkedList:
             else:
                 current.pointer = value
 
+
+    def InsertBefore(self, new_value, value):
+        """
+        This function inserts the (new value) before the 
+        (value) of the linked list if it does exist
+        """
+        
+        if (value is None) or (new_value is None):
+            raise Exception("Both values must not be None !")
+
+        if not isinstance(value, Node):
+            value = Node(value)
+        
+        if not isinstance(new_value, Node):
+            new_value = Node(new_value)
+
+        if not self.Includes(value):
+            raise Exception(f"The linked list has no value named \'{value}\' !")
+
+        if self.head.value == value.value:
+            new_value.pointer, self.head = self.head, new_value
+            return 0
+
+        current = self.head
+        while current is not None:
+            if current.pointer.value == value.value:
+                new_value.pointer, current.pointer = current.pointer, new_value
+                return 0
+            current = current.pointer
+
+
+    def InsertAfter(self, new_value, value):
+        """
+        This function inserts the (new value) after the 
+        (value) of the linked list if it does exist
+        """
+
+        if (value is None) or (new_value is None):
+            raise Exception("Both values must not be None !")
+        
+        if not isinstance(value, Node):
+            value = Node(value)
+
+        if not isinstance(new_value, Node):
+            new_value = Node(new_value)
+
+        if not self.Includes(value):
+            raise Exception(f"The linked list has no value named \'{value}\' !")
+
+        current = self.head
+        while current is not None:
+            if current.value == value.value:
+                new_value.pointer, current.pointer = current.pointer, new_value
+                return 0
+            current = current.pointer
+
+
+    def Delete(self, value):
+        """
+        This function deletes a value from 
+        the linked list if it does exist in it.
+        Otherwise, it raise an error.
+
+        The (value) can be either (Node) instances or 
+        any other type, because the method will turn 
+        everything to a (Node) instance if it wasn't. 
+        """
+
+        if value is None:
+            raise Exception("The provided value must not be (None) !")
+
+        if not isinstance(value, Node):
+            value = Node(value)
+
+        if not self.Includes(value.value):
+                raise Exception("The provided value isn't existed in the Linked list !")
+
+        if self.head is None:
+            raise Exception("The linked list is empty !")
+        elif self.head.value == value.value:
+            self.head = self.head.pointer
+        else:
+            current = self.head
+            while current.pointer is not None:
+                if current.pointer.value == value.value:
+                    current.pointer = current.pointer.pointer
+                    return 0
+                current = current.pointer
+    
+
+#================================================
+#===========    Additional methods    ===========
+#================================================
 
     def Replace(self, value, new):
         """
@@ -204,40 +272,7 @@ class LinkedList:
                 if current.value == value.value:
                     current.value = new.value
                     return 0
-
-
-    def Delete(self, value):
-        """
-        This function deletes a value from 
-        the linked list if it does exist in it.
-        Otherwise, it raise an error.
-
-        The (value) can be either (Node) instances or 
-        any other type, because the method will turn 
-        everything to a (Node) instance if it wasn't. 
-        """
-
-        if value is None:
-            raise Exception("The provided value must not be (None) !")
-
-        if not isinstance(value, Node):
-            value = Node(value)
-
-        if not self.Includes(value.value):
-                raise Exception("The provided value isn't existed in the Linked list !")
-
-        if self.head is None:
-            raise Exception("The linked list is empty !")
-        elif self.head.value == value.value:
-            self.head = self.head.pointer
-        else:
-            current = self.head
-            while current.pointer is not None:
-                if current.pointer.value == value.value:
-                    current.pointer = current.pointer.pointer
-                    return 0
-                current = current.pointer
-            
+        
 
     def Slice(self, From=None, To=None):
         """
@@ -620,7 +655,6 @@ class DoublyLinkedList:
             current = current.n_pointer
 
         return reverse
-
 
 
 if __name__ == "__main__":
