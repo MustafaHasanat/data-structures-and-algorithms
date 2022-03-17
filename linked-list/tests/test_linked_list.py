@@ -53,22 +53,22 @@ def test_providing_not_node_instance_for_append_method(my_linked_list):
 
 
 def test_inserting_a_node_before_a_specific_other_node(my_linked_list):
-    my_linked_list.InsertBefore("Barham", "Zaid")
+    my_linked_list.InsertBefore("Zaid", "Barham")
     assert str(my_linked_list) == "Mustafa -> Barham -> Zaid -> Ammar -> NULL"
 
 
 def test_inserting_a_node_before_the_head(my_linked_list):
-    my_linked_list.InsertBefore("Barham", "Mustafa")
+    my_linked_list.InsertBefore("Mustafa", "Barham")
     assert str(my_linked_list) == "Barham -> Mustafa -> Zaid -> Ammar -> NULL"
 
 
 def test_inserting_a_node_after_the_last_node(my_linked_list):
-    my_linked_list.InsertAfter("Barham", "Ammar")
+    my_linked_list.InsertAfter("Ammar", "Barham")
     assert str(my_linked_list) == "Mustafa -> Zaid -> Ammar -> Barham -> NULL"
 
 
 def test_inserting_a_node_after_a_specific_other_node(my_linked_list):
-    my_linked_list.InsertAfter("Barham", "Zaid")
+    my_linked_list.InsertAfter("Zaid", "Barham")
     assert str(my_linked_list) == "Mustafa -> Zaid -> Barham -> Ammar -> NULL"
 
 
@@ -85,6 +85,38 @@ def test_deleting_a_middle_node(my_linked_list):
 def test_deleting_the_last_node(my_linked_list):
     my_linked_list.Delete("Ammar")
     assert str(my_linked_list) == "Mustafa -> Zaid -> NULL"
+
+
+#==============================================
+#===========    Challenge 07 tests   ==========
+#==============================================
+
+
+def test_Length_linked_list(my_long_linked_list):
+    assert my_long_linked_list.Length() == 6
+
+
+def test_kthFromEnd_at_0(my_long_linked_list):
+    assert my_long_linked_list.kthFromEnd(0) == "Husain"
+
+
+def test_kthFromEnd_in_the_middle(my_long_linked_list):
+    assert my_long_linked_list.kthFromEnd(2) == "Barham"
+
+
+def test_kthFromEnd_at_the_begining(my_long_linked_list):
+    assert my_long_linked_list.kthFromEnd(5) == "Mustafa"
+
+
+def test_kthFromEnd_for_list_of_size_1():
+    ll = LinkedList()
+    ll.Append("Mustafa") 
+    assert ll.kthFromEnd(0) == "Mustafa"
+
+
+def test_kthFromEnd_where_k_is_greater_than_length(my_long_linked_list):
+    with pytest.raises(Exception):
+        my_long_linked_list.kthFromEnd(10)
 
 
 #==============================================
@@ -136,9 +168,9 @@ def test_reversing_the_linked_list(my_linked_list):
     assert str(new_list) == "Ammar -> Zaid -> Mustafa -> NULL"
 
 
-#==========================================
-#===========    Streach goal    ===========
-#==========================================
+#==================================================
+#===========    Streach goal (Doubly)   ===========
+#==================================================
 
 
 def test_doubly_linked_list_ToString_meyhod(my_doubly_linked_list):
