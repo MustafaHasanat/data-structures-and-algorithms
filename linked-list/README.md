@@ -15,7 +15,7 @@ It also can append, insert, delete, reverse, slice, and print nodes from a linke
 
 > [Kth element](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/7)
 
-> [Linked List Zip]()
+> [Linked List Zip](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/8)
 
 ---
 
