@@ -6,6 +6,12 @@ We want to implement a "stack" and a "queue" data structues using python classes
 
 ---
 
+## Pull requests
+
+> [PR 1](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/9)
+
+---
+
 ## Challenge
 
 Build 3 classes:
