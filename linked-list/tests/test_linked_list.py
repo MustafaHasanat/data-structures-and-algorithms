@@ -118,6 +118,38 @@ def test_kthFromEnd_where_k_is_greater_than_length(my_long_linked_list):
     with pytest.raises(Exception):
         my_long_linked_list.kthFromEnd(10)
 
+#==============================================
+#===========    Challenge 08 tests   ==========
+#==============================================
+
+def test_ziplists_for_identical_length_lists(my_linked_list, numeric_list):
+    actual = str(LinkedList.zipLists(my_linked_list, numeric_list))
+    expected = "Mustafa -> 0 -> Zaid -> 1 -> Ammar -> 2 -> NULL"
+    assert actual == expected
+
+
+def test_ziplists_for_list1_is_longer(my_linked_list, long_numeric_list):
+    actual = str(LinkedList.zipLists(long_numeric_list, my_linked_list))  
+    expected = "0 -> Mustafa -> 1 -> Zaid -> 2 -> Ammar -> 3 -> 4 -> 5 -> NULL"
+    assert actual == expected
+
+
+def test_ziplists_for_list2_is_longer(my_linked_list, long_numeric_list):
+    actual = str(LinkedList.zipLists(my_linked_list, long_numeric_list)) 
+    expected = "Mustafa -> 0 -> Zaid -> 1 -> Ammar -> 2 -> 3 -> 4 -> 5 -> NULL"
+    assert actual == expected
+
+
+def test_ziplists_for_one_list_is_empty(my_linked_list):
+    assert str(LinkedList.zipLists(my_linked_list, LinkedList())) == "Mustafa -> Zaid -> Ammar -> NULL"
+    assert str(LinkedList.zipLists(LinkedList(), my_linked_list)) == "Mustafa -> Zaid -> Ammar -> NULL"
+
+
+def test_ziplists_for_providing_not_list():
+    with pytest.raises(Exception):
+        LinkedList.zipLists("hello", 5)
+
+
 
 #==============================================
 #===========    Additional Tests    ===========
@@ -248,3 +280,16 @@ def my_long_doubly_linked_list():
     [dll.Append(DoublyNode(i)) for i in ["Mustafa", "Zaid", "Ammar", "Barham", "Imad", "Husain"]]
     return dll
 
+
+@pytest.fixture
+def numeric_list():
+    ll = LinkedList()
+    [ll.Append(i) for i in range(3)]
+    return ll
+
+
+@pytest.fixture
+def long_numeric_list():
+    ll = LinkedList()
+    [ll.Append(i) for i in range(6)]
+    return ll

@@ -279,6 +279,42 @@ class LinkedList:
             else:
                 return nodes
 
+#===================================================
+#===========    Challenge 08 methods    ============
+#===================================================
+
+    @staticmethod
+    def zipLists(list1, list2):
+        """
+        This function takes two linked lists as arguments, combine 
+        them together alternetively, then return the new linked list
+        """
+    
+        if (not isinstance(list1, LinkedList)) or (not isinstance(list2, LinkedList)):
+            raise Exception("Provided items must be LinkedList objects !")
+
+        current1 = list1.head
+        current2 = list2.head
+
+        if (current1 is None) and (current2 is None):
+            return None
+        elif current1 is None:
+            return list2
+        elif current2 is None:
+            return list1
+
+        for _ in range(list1.Length()):
+            if current2 is not None:
+                list1.InsertAfter(current1.value, current2.value)
+                current1 = current1.pointer.pointer
+                current2 = current2.pointer
+            
+        while current2 is not None:
+            list1.Append(current2.value)
+            current2 = current2.pointer
+
+        return list1
+
 #================================================
 #===========    Additional methods    ===========
 #================================================
@@ -413,8 +449,6 @@ class DoublyNode:
 
     def __str__(self):
         return self.value
-
-
 class DoublyLinkedList:
     """
     """
@@ -706,7 +740,14 @@ class DoublyLinkedList:
 
 
 if __name__ == "__main__":
-    ll = LinkedList()
-    [ll.Append(i) for i in ["Mustafa", "Ammar", "Barham"]]
-    print(ll.kthFromEnd(3))
+    l1, l2, l3, l4, l5 = LinkedList(), LinkedList(), LinkedList(), LinkedList(), LinkedList()
+    
+    [l1.Append(i) for i in ["Mustafa", "Ammar", "Barham"]]
+    [l2.Append(i) for i in ["Zaid", "Imad", "Husain"]]
+    [l3.Append(i) for i in ["Zaid", "Imad"]]
+    [l4.Append(i) for i in ["Zaid", "Imad", "Husain", "Saleem"]]
+
+    zipped = LinkedList.zipLists(l1, l3)
+
+    print(str(zipped))
 
