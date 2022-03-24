@@ -1,5 +1,7 @@
 # Stacks and Queues
 
+> [Back to main](../README.md)
+
 We want to implement a "stack" and a "queue" data structues using python classes. The Stack is a data structure that has one gate for (in) and (out), and it follows the FILO (first in, last out) and the LIFO (last in, first out) concepts. The Queue is a data structure that has a gate for (in) and one for (out), and it follows the FIFO (first in, first out) and the LILO (last in, last out) concepts.
 
 ---
