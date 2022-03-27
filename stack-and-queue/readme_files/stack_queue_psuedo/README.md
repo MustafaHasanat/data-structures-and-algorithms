@@ -18,7 +18,11 @@ Build a class that build a queue from 2 stacks
 
 ## Approach & Efficiency
 
-Big(o) for both time and space in most methods is o(1), since we only deal with one element at a time
+enqueue: just push the value to the stack 1
+
+dequeue: empty the stack 1 inside 2 then pop the last item in 2 
+
+Big(o) for both time and space in enqueue is o(1),and in dequeue is o(n) 
 
 ## Solution
 
@@ -76,7 +80,7 @@ class PseudoQueue:
 def test_enqueue():
     pseudoQ = PseudoQueue()
     [pseudoQ.enqueue(i) for i in ["Mustafa", "Zaid", "Barham"]]
-    assert pseudoQ.front() == "Mustafa"
+    assert pseudoQ.dequeue() == "Barham"
 
 def test_dequeue(my_pseudo_queue):
     assert my_pseudo_queue.dequeue() == "Barham"
