@@ -8,5 +8,6 @@
 | Class 02 | [Array Insert Shift](./Class_02_insert_shift_array/README.md) |
 | Class 03 | [Array Binary Search](./Class_03_array_binary_search/README.md) |
 | Data Structure 01 | [Linked Lists](./linked-list/README.md) |
+| Data Structure 02 | [Stack and Queue](./stack-and-queue/README.md) |
 
 ---

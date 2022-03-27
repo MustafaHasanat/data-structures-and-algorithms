@@ -1,0 +1,149 @@
+class Node:
+    """
+    This class creates a Node with a given value and 
+    a default pointer of (None)
+    """
+    
+    def __init__(self, value):
+        self.value = value
+        self.pointer = None
+
+
+class Stack:
+    """
+    This class creates a Stack with a default Top of (None)
+    """
+    
+    def __init__(self):
+        self.top = None
+
+    def __str__(self):
+        """
+        This method return a visual of the stack elements
+        """
+        
+        output = []
+        current = self.top
+        while current is not None:
+            output.append(str(current.value))
+            current = current.pointer
+        return "Top -> " + " -> ".join(output)
+
+    def push(self, value):
+        """
+        This method append a node value at the top of the stack
+        """
+
+        if not isinstance(value, Node):
+            value = Node(value)
+        value.pointer = self.top
+        self.top = value
+
+    def pop(self):
+        """
+        This method remove and return the top value of the stack
+        """
+
+        if self.is_empty():
+            raise Exception("Stack is empty")
+        temp = self.top
+        self.top = self.top.pointer
+        temp.pointer = None
+        return temp.value 
+
+    def peek(self):
+        """
+        This method return the Top's value without removing it
+        """
+        if self.is_empty():
+            raise Exception("Stack is empty")
+        return self.top.value
+
+    def is_empty(self):
+        """
+        This method checks if the stack is empty or not
+        """
+        
+        return self.top is None
+
+
+class Queue:
+    """
+    This class creates a Queue with a default Front and Back of (None)s
+    """
+    
+    def __init__(self):
+        self.front = None
+        self.back = None
+
+    def __str__(self):
+        """
+        This method return a visual of the queue elements
+        """
+        
+        output = []
+        current = self.front
+        while current is not None:
+            output.append(str(current.value))
+            current = current.pointer
+        return "Front -> " + " -> ".join(output) + " <- Back"
+
+    def enqueue(self, value):
+        """
+        This method put a node value at the back of the queue
+        """
+
+        if not isinstance(value, Node):
+            value = Node(value)
+
+        if self.is_empty():
+            self.front, self.back = value, value
+        else:
+            self.back.pointer = value
+            self.back = value
+
+    def dequeue(self):
+        """
+        This method delete the last node from the front of the queue
+        """
+        
+        if self.is_empty():
+            raise Exception("Queue is empty")
+        if self.front.value == self.back.value:
+            value = self.front.value
+            self.front, self.back = None, None
+            return value
+
+        temp = self.front
+        self.front = self.front.pointer
+        temp.pointer = None
+        return temp.value 
+
+    def is_empty(self):
+        """
+        This method checks if the queue is empty or not
+        """
+        
+        return self.front is None and self.back is None
+
+    def peek(self):
+        """
+        This method return the Front's value without removing it
+        """
+
+        if self.is_empty():
+            raise Exception("Queue is empty")
+        return self.front.value
+
+
+
+if __name__ == "__main__":
+    q = Queue()
+    [q.enqueue(i) for i in ["Mustafa", "Barham", "Zaid", "Ammar"]]
+    print(q)
+    
+    s = Stack()
+    [s.push(i) for i in ["Mustafa", "Barham", "Zaid", "Ammar"]]
+    print(s)
+
+
