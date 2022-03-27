@@ -10,7 +10,7 @@ Build a class that build a queue from 2 stacks
 
 ## Pull Request
 
-> [PR 2]()
+> [PR 2](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/10)
 
 ## Whiteboard Process
 
