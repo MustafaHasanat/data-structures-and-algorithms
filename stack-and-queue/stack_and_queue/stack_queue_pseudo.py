@@ -17,19 +17,27 @@ class PseudoQueue:
 
         self.stack1.push(value)
 
+        if self.stack2.is_empty():
+            while not self.stack1.is_empty():
+                self.stack2.push(self.stack1.pop())
+
+
     def dequeue(self):
         """
         Extracts a value from the PseudoQueue, using a first-in, first-out approach.
         """
-        
-        if not self.stack2.is_empty():
+
+        if self.stack2.is_empty() and self.stack1.is_empty():
+            raise(Exception("Pseudo Queue is empty !"))
+
+        elif self.stack2.is_empty() and not self.stack1.is_empty():
             while not self.stack1.is_empty():
                 self.stack2.push(self.stack1.pop())
+            return self.stack2.pop()
 
-        if not self.stack1.is_empty():
-            return self.stack1.pop()
         else:
-            raise(Exception("Pseudo Queue is empty !"))
+            return self.stack2.pop()
+        
 
 
     def is_empty(self):
