@@ -44,6 +44,11 @@ def test_peek_on_empty_stack():
     with pytest.raises(Exception):
         Stack().peek()
 
+def test_size_stack(my_stack):
+    assert my_stack.size() == 4
+
+def test_reverse_stack(my_stack):
+    assert my_stack.reverse().peek() == "Mustafa"
 
 # =====================================
 # ====== tests the queue classe =======

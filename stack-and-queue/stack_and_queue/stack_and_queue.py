@@ -66,6 +66,27 @@ class Stack:
         
         return self.top is None
 
+    def size(self):
+        """
+        This method return the size of the stack 
+        """
+        
+        size = 0
+        while not self.is_empty():
+            size += 1
+            self.pop()
+
+        return size
+
+    def reverse(self):
+        rev = Stack()
+        if self.is_empty: rev 
+
+        while not self.is_empty():
+            rev.push(self.pop())
+
+        return rev
+
 
 class Queue:
     """
