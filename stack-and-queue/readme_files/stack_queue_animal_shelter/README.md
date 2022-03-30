@@ -1,4 +1,4 @@
-# Stack Queue Psuedo
+# Stack Queue Animal Shelter
 
 > [Back to main](../../README.md)
 
@@ -10,11 +10,11 @@ Create a class that makes a virtual shelter that takes cats and dogs objects and
 
 ## Pull Request
 
-> [PR 2]()
+> [PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/11)
 
 ## Whiteboard Process
 
-![img]()
+![img](./Problem%20Solving%20Whiteboard%20Template.jpg)
 
 ## Approach & Efficiency
 
