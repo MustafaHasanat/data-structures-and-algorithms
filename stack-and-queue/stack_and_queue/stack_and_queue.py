@@ -154,7 +154,7 @@ class Queue:
 
         if self.is_empty():
             raise Exception("Queue is empty")
-        return self.front.value
+        return f"{self.front.value}"
 
 
 
