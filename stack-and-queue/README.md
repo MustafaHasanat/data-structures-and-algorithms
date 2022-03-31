@@ -15,7 +15,10 @@ We want to implement a "stack" and a "queue" data structues using python classes
 - Challenge 11: Stack Queue Psuedo
     
     > [README](./readme_files/stack_queue_psuedo/README.md)
+
+- Challenge 12: Stack Queue Animal Shelter
     
+    > [README](./readme_files/stack_queue_animal_shelter/README.md)
 
 ---
 
