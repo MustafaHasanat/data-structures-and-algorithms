@@ -17,7 +17,7 @@ There are 3 types of brackets:
 
 ## Pull Request
 
-> [PR]()
+> [PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/12)
 
 ## Whiteboard Process
 
