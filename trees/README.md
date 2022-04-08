@@ -13,7 +13,7 @@ Height - The height of a tree is the number of edges from the root to the furthe
 
 ## Pull Requests:
 
-> [PR 1]()
+> [PR 1: trees](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/13)
 
 ---
 
