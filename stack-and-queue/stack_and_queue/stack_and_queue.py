@@ -86,6 +86,29 @@ class Stack:
             rev.push(self.pop())
 
         return rev
+    
+    @staticmethod
+    def validate_brackets(string):
+        if not type(string) == str: 
+            raise Exception("Invalid input !")
+        
+        pairs = {"(": ")", "[": "]", "{": "}"}
+        stack = Stack()
+        
+        for i in string:
+            if i in pairs.keys():
+                stack.push(i)
+            
+            elif i in pairs.values():
+                if stack.is_empty():
+                    return False
+                elif i == pairs.get(stack.peek()):
+                    stack.pop()
+                    continue
+                else:
+                    return False
+        
+        return True if stack.is_empty() else False
 
 
 class Queue:
@@ -159,12 +182,5 @@ class Queue:
 
 
 if __name__ == "__main__":
-    q = Queue()
-    [q.enqueue(i) for i in ["Mustafa", "Barham", "Zaid", "Ammar"]]
-    print(q)
-    
-    s = Stack()
-    [s.push(i) for i in ["Mustafa", "Barham", "Zaid", "Ammar"]]
-    print(s)
-
+    pass
 

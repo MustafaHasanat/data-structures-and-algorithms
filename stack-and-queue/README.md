@@ -20,7 +20,9 @@ We want to implement a "stack" and a "queue" data structues using python classes
     
     > [README](./readme_files/stack_queue_animal_shelter/README.md)
 
----
+- Challenge 13: Stack Queue Brackets
+    
+    > [README](./readme_files/stack_queue_brackets/README.md)
 
 ## Challenge
 
