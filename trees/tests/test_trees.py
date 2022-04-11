@@ -42,6 +42,12 @@ def test_contains_binary_tree_search(myTreeSearch):
     assert myTreeSearch.contains(0) == False
     assert myTreeSearch.contains(100) == False
 
+def test_find_maximum_value(myTreeSearch):
+    assert myTreeSearch.find_max() == 105
+
+def test_find_maximum_value_on_empty_tree():
+    with pytest.raises(Exception):
+        BinaryTreeSearch().find_max()
 
 @pytest.fixture
 def myTree():

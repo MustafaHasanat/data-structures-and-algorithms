@@ -131,6 +131,31 @@ class BinaryTreeSearch(BinaryTree):
         
         return False
     
+    
+    def find_max(self):
+        """
+        input: none
+        doing: return the maximum value from the binary tree
+        output: number 
+        """
+        
+        if not self.root:
+            raise(Exception("Tree is empty !"))
+        
+        if not self.root.left and not self.root.right:
+            return self.root.value
+
+        maximum = self.root.value
+        current = self.root
+                
+        while True:
+            if current.right:
+                current = current.right                
+                maximum = current.value
+            else:
+                return maximum
+    
+    
 
 
 if __name__ == "__main__": 
