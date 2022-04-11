@@ -1,5 +1,7 @@
 # Trees
 
+> [Back to main](../README.md)
+
 Node - A Tree node is a component which may contain its own values, and references to other nodes
 Root - The root is the node at the beginning of the tree
 K - A number that specifies the maximum number of children any node may have in a k-ary tree. In a binary tree, k = 2.
@@ -41,7 +43,29 @@ Binary Tree
 
 ## Approach & Efficiency
 
-I ysed the recursion inner function to traverse each tree and track its values. And inside that recursive function, I implemented the special feature of each individual method.
+I used the recursion inner function to traverse each tree and track its values. And inside that recursive function, I implemented the special feature of each individual method.
+
+Big-O for the methods:
+
+- pre_order 
+    - o(n) for time because it is a recursive function
+    - o(n) for space because it appends items to a new list 
+
+- in_order
+    - o(n) for time because it is a recursive function
+    - o(n) for space because it appends items to a new list
+
+- post_order
+    - o(n) for time because it is a recursive function
+    - o(n) for space because it appends items to a new list
+
+- add
+    - o(log(n)) for time because the tree size is decreasing over each iteration 
+    - o(1) for space because we only created one variable to hold the current value
+
+- contains
+    - o(log(n)) for time because the tree size is decreasing over each iteration 
+    - o(1) for space because we only created one variable to hold the current value
 
 ---
 

@@ -26,9 +26,7 @@ class BinaryTree:
 
             if node.right:
                 _walk(node.right)
-                
-            
-    
+
         _walk(self.root)
                 
         return output
@@ -118,8 +116,20 @@ class BinaryTreeSearch(BinaryTree):
         output: boolean 
         """
         
-        return True if value in self.pre_order() else False
+        current = self.root
         
+        while True:
+            if current.value == value:
+                return True
+            
+            if current.left and value < current.value:
+                current = current.left
+            elif current.right and value > current.value:
+                current = current.right                
+            else:
+                break
+        
+        return False
     
 
 

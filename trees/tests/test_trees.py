@@ -11,7 +11,26 @@ def test_in_order(myTree):
 def test_post_order(myTree):
     assert myTree.post_order() == ['D', 'E', 'B', 'F', 'C', 'A']
 
-def test_add_binary_tree_search(myTreeSearch):
+def test_add_left_node_to_binary_tree_search():
+    tree = BinaryTreeSearch()
+    tree.root = TNode(23)
+    tree.add(8)
+    assert tree.root.left.value == 8
+
+def test_add_right_node_to_binary_tree_search():
+    tree = BinaryTreeSearch()
+    tree.root = TNode(23)
+    tree.add(42)
+    assert tree.root.right.value == 42
+
+def test_add_cascaded_node_to_binary_tree_search():
+    tree = BinaryTreeSearch()
+    tree.root = TNode(23)
+    tree.add(8)
+    tree.add(15)
+    assert tree.root.left.right.value == 15
+
+def test_add_multiple_nodes_binary_tree_search(myTreeSearch):
     assert myTreeSearch.pre_order() == [23, 8, 4, 16, 15, 22, 42, 27, 85, 105]
     assert myTreeSearch.in_order() == [4, 8, 15, 16, 22, 23, 27, 42, 85, 105]
     assert myTreeSearch.post_order() == [4, 15, 22, 16, 8, 27, 105, 85, 42, 23]
