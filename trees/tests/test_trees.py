@@ -42,12 +42,17 @@ def test_contains_binary_tree_search(myTreeSearch):
     assert myTreeSearch.contains(0) == False
     assert myTreeSearch.contains(100) == False
 
-def test_find_maximum_value(myTreeSearch):
-    assert myTreeSearch.find_max() == 105
+def test_find_maximum_value(myBinaryTree):
+    assert myBinaryTree.find_max() == 105
 
 def test_find_maximum_value_on_empty_tree():
     with pytest.raises(Exception):
-        BinaryTreeSearch().find_max()
+        BinaryTree().find_max()
+
+
+
+
+# ==================================
 
 @pytest.fixture
 def myTree():
@@ -66,6 +71,21 @@ def myTree():
         
     tree = BinaryTree()
     tree.root = nodeA
+    
+    return tree
+
+
+@pytest.fixture
+def myBinaryTree():
+    tree = BinaryTree()
+    tree.root = TNode(23)
+    tree.root.left, tree.root.right = TNode(27), TNode(42)
+    
+    tree.root.left.left, tree.root.left.right = TNode(4), TNode(16)
+    tree.root.left.right.left, tree.root.left.right.right = TNode(105), TNode(22)
+    
+    tree.root.right.left, tree.root.right.right = TNode(8), TNode(85)
+    tree.root.right.right.right = TNode(15)
     
     return tree
 
