@@ -178,9 +178,26 @@ class Queue:
         if self.is_empty():
             raise Exception("Queue is empty")
         return f"{self.front.value}"
+    
+
+    @staticmethod
+    def DuckDuckGoose(strings: list, k: int):
+        if (type(strings) != list) or (type(k) != int):
+            raise Exception("Invalid input !")
+        
+        q = Queue()
+        [q.enqueue(i) for i in strings]
+
+        for _ in range(len(strings)-1):
+            [q.enqueue(q.dequeue()) for _ in range(k-1)]
+            q.dequeue() 
+
+        return q.front.value
+
+
 
 
 
 if __name__ == "__main__":
-    pass
-
+    print(Queue.DuckDuckGoose(["A", "B", "C", "D", "E"], 3))
+ 
