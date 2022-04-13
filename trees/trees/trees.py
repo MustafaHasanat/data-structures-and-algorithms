@@ -1,9 +1,42 @@
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.pointer = None
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.back = None
+
+    def enqueue(self, value):
+        if not isinstance(value, Node):
+            value = Node(value)
+
+        if self.is_empty():
+            self.front, self.back = value, value
+        else:
+            self.back.pointer = value
+            self.back = value
+
+    def dequeue(self):
+        if self.is_empty():
+            raise Exception("Queue is empty")
+        if self.front.value == self.back.value:
+            value = self.front.value
+            self.front, self.back = None, None
+            return value
+
+        temp = self.front
+        self.front = self.front.pointer
+        temp.pointer = None
+        return temp.value 
+
+    def is_empty(self):
+        return self.front is None and self.back is None
 class TNode:
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
-
 
 class BinaryTree:
     def __init__(self):
@@ -112,7 +145,32 @@ class BinaryTree:
         return maximum
     
     
+    def breadth_first(self):
+        """
+        input: none
+        doing: traverse the tree in a breadth-first manner
+        output: list of values
+        """
         
+        if not self.root:
+            raise(Exception("Tree is empty !"))
+        
+        output = []
+        q = Queue()
+        q.enqueue(self.root)
+
+        while not q.is_empty():
+            front = q.dequeue()
+            output.append(front.value)
+        
+            if front.left:
+                q.enqueue(front.left)
+
+            if front.right:
+                q.enqueue(front.right)
+        
+        return output
+                
         
 class BinaryTreeSearch(BinaryTree):
     """
