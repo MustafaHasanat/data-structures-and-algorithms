@@ -1,13 +1,14 @@
-from trees.trees import TNode, BinaryTree
+from trees.trees import TNode, BinaryTree, breadth_first
 import pytest
 
 
 def test_breadth_first(myBinaryTree):
-    assert myBinaryTree.breadth_first() == [23, 8, 42, 4, 16, 27, 85, 15, 22, 105]
+    assert breadth_first(myBinaryTree) == [23, 8, 42, 4, 16, 27, 85, 15, 22, 105]
 
 def test_breadth_first():
     with pytest.raises(Exception):
-        BinaryTree().breadth_first()
+        tree = BinaryTree()
+        breadth_first(tree)
     
 
 @pytest.fixture

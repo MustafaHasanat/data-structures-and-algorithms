@@ -22,14 +22,14 @@ Big-O is o(n) for time because the while loop, and o(n) for space because the qu
 ## Solution
 
 ```
-def breadth_first(self):
+def breadth_first(tree):
 
-    if not self.root:
+    if not tree.root:
         raise(Exception("Tree is empty !"))
 
     output = []
     q = Queue()
-    q.enqueue(self.root)
+    q.enqueue(tree.root)
     
 
     while not q.is_empty():
@@ -49,11 +49,12 @@ def breadth_first(self):
 
 ```
 def test_breadth_first(myBinaryTree):
-    assert myBinaryTree.breadth_first() == [23, 8, 42, 4, 16, 27, 85, 15, 22, 105]
+    assert breadth_first(myBinaryTree) == [23, 8, 42, 4, 16, 27, 85, 15, 22, 105]
 
 def test_breadth_first():
     with pytest.raises(Exception):
-        BinaryTree().breadth_first()
+        tree = BinaryTree()
+        breadth_first(tree)
     
 @pytest.fixture
 def myBinaryTree():
