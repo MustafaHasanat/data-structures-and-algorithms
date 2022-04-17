@@ -1,9 +1,42 @@
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.pointer = None
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.back = None
+
+    def enqueue(self, value):
+        if not isinstance(value, Node):
+            value = Node(value)
+
+        if self.is_empty():
+            self.front, self.back = value, value
+        else:
+            self.back.pointer = value
+            self.back = value
+
+    def dequeue(self):
+        if self.is_empty():
+            raise Exception("Queue is empty")
+        if self.front.value == self.back.value:
+            value = self.front.value
+            self.front, self.back = None, None
+            return value
+
+        temp = self.front
+        self.front = self.front.pointer
+        temp.pointer = None
+        return temp.value 
+
+    def is_empty(self):
+        return self.front is None and self.back is None
 class TNode:
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
-
 
 class BinaryTree:
     def __init__(self):
@@ -79,7 +112,39 @@ class BinaryTree:
         
         return list(output)
 
+
+    def find_max(self):
+        """
+        input: none
+        doing: return the maximum value from the binary tree
+        output: number 
+        """
         
+        if not self.root:
+            raise(Exception("Tree is empty !"))
+        
+        if not self.root.left and not self.root.right:
+            return self.root.value
+
+        maximum = self.root.value
+                
+        def _walk(node):
+            nonlocal maximum 
+
+            if node.value > maximum:
+                maximum = node.value
+            
+            if node.left:
+                _walk(node.left)
+
+            if node.right:
+                _walk(node.right)
+                
+        _walk(self.root)
+        
+        return maximum
+    
+                
         
 class BinaryTreeSearch(BinaryTree):
     """
@@ -130,6 +195,35 @@ class BinaryTreeSearch(BinaryTree):
                 break
         
         return False
+    
+    
+    
+def breadth_first(tree):
+    """
+    input: tree
+    doing: traverse the tree in a breadth-first manner
+    output: list of values
+    """
+    
+    if not tree.root:
+        raise(Exception("Tree is empty !"))
+    
+    output = []
+    q = Queue()
+    q.enqueue(tree.root)
+
+    while not q.is_empty():
+        front = q.dequeue()
+        output.append(front.value)
+    
+        if front.left:
+            q.enqueue(front.left)
+
+        if front.right:
+            q.enqueue(front.right)
+    
+    return output
+
     
 
 
