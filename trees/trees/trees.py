@@ -225,9 +225,8 @@ def breadth_first(tree):
     
 def fizz_buzz_tree(tree):
     """
-    traversing through the array array to create a new tree.
-    Set the values of each of the new nodes depending on the 
-    corresponding node value in the source tree.
+    traversing through the tree and create a new one.
+    Set the values of nodes according to the FizzBuzz game
     """
     
     if not tree.root:

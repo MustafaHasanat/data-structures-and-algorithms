@@ -29,6 +29,8 @@ Height - The height of a tree is the number of edges from the root to the furthe
 
 > [ breadth first](./trees/readme_files/tree_breadth_first/README.md)
 
+> [ fizz buzz ](./trees/readme_files/tree-fizz-buzz/README.md)
+
 ---
 
 ## Challenge
