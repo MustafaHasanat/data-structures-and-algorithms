@@ -145,7 +145,6 @@ class BinaryTree:
         return maximum
     
                 
-        
 class BinaryTreeSearch(BinaryTree):
     """
     a binary tree where each left node is less than its root, and each 
@@ -197,7 +196,6 @@ class BinaryTreeSearch(BinaryTree):
         return False
     
     
-    
 def breadth_first(tree):
     """
     input: tree
@@ -225,13 +223,54 @@ def breadth_first(tree):
     return output
 
     
+def fizz_buzz_tree(tree):
+    """
+    traversing through the array array to create a new tree.
+    Set the values of each of the new nodes depending on the 
+    corresponding node value in the source tree.
+    """
+    
+    if not tree.root:
+        raise(Exception("Tree is empty !"))
+
+    newTree = BinaryTreeSearch()
+    newTree.root = tree.root 
+        
+    def _walk(node):
+        
+        if node.left:
+            _walk(node.left)
+
+        if node.right:
+            _walk(node.right)
+            
+        if not str(node.value).isdigit(): 
+            raise Exception("All values must be integers !")
+        
+        if node.value%3==0 and node.value%5==0:
+            node.value = "FizzBuzz"
+        elif node.value%5==0:
+            node.value = "Buzz"
+        elif node.value%3==0:
+            node.value = "Fizz"
+        else:
+            node.value = str(node.value)
+
+    _walk(newTree.root)
+            
+    return newTree
+     
+ 
 
 
 if __name__ == "__main__": 
-    pass
-    # tree = BinaryTreeSearch()
-    # tree.root = TNode(23) 
-    # [tree.add(i) for i in [8,4,16,15,22,42,27,85,105]]
+    # pass
+    tree = BinaryTreeSearch()
+    tree.root = TNode(23) 
+    [tree.add(i) for i in [8,4,16,15,22,42,27,85,105]]
+    print(tree.pre_order()) 
+    print(fizz_buzz_tree(tree).pre_order()) 
+    
     # print(tree.pre_order())
     # print(tree.in_order())
     # print(tree.post_order())
