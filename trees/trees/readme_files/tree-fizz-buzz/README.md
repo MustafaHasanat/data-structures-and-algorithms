@@ -7,7 +7,7 @@ Write a function called fizz_buzz_tree that applies the Fizz Buzz game on a tree
 
 ## Whiteboard Process
 
-![img]()
+![img](/trees/trees/readme_files/tree-fizz-buzz/Problem%20Solving%20Whiteboard%20Template.jpg)
 
 ## Approach & Efficiency
 
