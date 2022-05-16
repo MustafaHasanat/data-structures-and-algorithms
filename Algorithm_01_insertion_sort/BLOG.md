@@ -6,7 +6,7 @@ Write a function that sort the input array in the (Insertion Sort) algorithm
 
 ## Pull Request:
 
-> 
+> [PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/17)
 
 ## Whiteboard Process
 
