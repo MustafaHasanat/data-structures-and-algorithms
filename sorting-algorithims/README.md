@@ -14,9 +14,9 @@
 
 ## Merge Sort 
 
-> [readme](./)
+> [readme](./sorting_algorithms/merge_sort/README.md)
 
-> [blog](./)
+> [blog](./sorting_algorithms/merge_sort/BLOG.md)
 
 > [PR]()
 
