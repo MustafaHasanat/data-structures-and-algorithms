@@ -1,4 +1,4 @@
-# README files nd Blogs for algorithims
+# README files and Blogs for algorithims
 
 ---
 
@@ -8,7 +8,8 @@
 
 > [blog](./insertion_sort/BLOG.md)
 
-> [PR]()
+> [PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/17)
 
+---
 
 
