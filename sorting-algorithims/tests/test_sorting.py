@@ -1,4 +1,4 @@
-from insertion_sort.insertion_sort import InsertionSort
+from sorting_algorithms.insertion_sort import InsertionSort
 import pytest
 
 def test_insertion_sort():
