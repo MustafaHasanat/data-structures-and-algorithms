@@ -260,6 +260,33 @@ def fizz_buzz_tree(tree):
     return newTree
      
  
+def odd_sum_tree(tree):
+    """
+    input: binary search tree
+    doing: sum all odd numbers
+    output: summation of odd numbers in the tree
+    """
+    
+    if not tree.root:
+        raise(Exception("Tree is empty !"))
+    
+    summation = 0
+            
+    def _walk(node):
+        nonlocal summation 
+
+        if node.value%2 != 0:
+            summation += node.value
+        
+        if node.left:
+            _walk(node.left)
+
+        if node.right:
+            _walk(node.right)
+            
+    _walk(tree.root)
+    
+    return summation
 
 
 if __name__ == "__main__": 
@@ -268,7 +295,7 @@ if __name__ == "__main__":
     tree.root = TNode(23) 
     [tree.add(i) for i in [8,4,16,15,22,42,27,85,105]]
     print(tree.pre_order()) 
-    print(fizz_buzz_tree(tree).pre_order()) 
+    print(odd_sum_tree(tree))  
     
     # print(tree.pre_order())
     # print(tree.in_order())
