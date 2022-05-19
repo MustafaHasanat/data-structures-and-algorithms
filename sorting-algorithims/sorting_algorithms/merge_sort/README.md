@@ -1,19 +1,28 @@
 # Challenge Summary
 
-> [Back](../README.md)
+> [Back](../../README.md)
 
+Write a function that sort the input array in the (Merge Sort) algorithm
 
 ## Pull Request:
 
-> [PR]()
+> [PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/18)
 
 ## Whiteboard Process
 
-![img]()
+![img](./Problem%20Solving%20Whiteboard%20Template.jpg)
 
 ## Approach & Efficiency
 
-Big-O is o(n2) for time because we have 2 nested loops, and o(n) for space because we created a new list 
+define a function (Mergesort) that takes a list as an argument 
+if the length of the list is bigger than 1, split the lists into two parts (left, right) from the middle
+call the function again recursively for each part of the list
+define 3 counters
+in a while loop that ends when both counters are less than the length of the left and right lists:
+compare the nth element between two lists and assign that element to the original list based on that
+if the first counter equals the length of the left list, assign the remaining elements of the right side of the right list to the original list, and vice versia for the else. 
+
+Big-O is o(log(n)) for time because we have a recursive function with a list that has a decreased length, and o(n) for space because we created multiple lists 
 
 ## Solution
 
@@ -54,7 +63,7 @@ def Merge(left, right, arr):
         for element in left[i:]: 
             arr[k] = element
             k += 1
-        
+
 ```
 
 ## Tests

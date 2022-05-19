@@ -6,6 +6,6 @@
 
 ## Efficency
 
-- Time: O(n^2)
+- Time: O(log(n))
 
 - Space: O(1)

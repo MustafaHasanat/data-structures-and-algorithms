@@ -1,6 +1,6 @@
 # Challenge Summary
 
-> [Back](../README.md)
+> [Back](../../README.md)
 
 Write a function that sort the input array in the (Insertion Sort) algorithm
 

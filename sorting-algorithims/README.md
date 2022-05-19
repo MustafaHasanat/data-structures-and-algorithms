@@ -18,7 +18,7 @@
 
 > [blog](./sorting_algorithms/merge_sort/BLOG.md)
 
-> [PR]()
+> [PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/18)
 
 ---
 

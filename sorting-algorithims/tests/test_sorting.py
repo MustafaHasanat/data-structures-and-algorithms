@@ -1,4 +1,4 @@
-from sorting_algorithms.insertion_sort import InsertionSort, Mergesort, Merge
+from sorting_algorithms.sorting_algorithms import InsertionSort, Mergesort, Merge
 import pytest
 
 

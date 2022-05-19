@@ -23,7 +23,7 @@ def Mergesort(arr):
       
       Mergesort(left)
       Mergesort(right)
-      Merge(left, right, arr)
+      Merge(left, right, arr) 
       
       return arr
 
