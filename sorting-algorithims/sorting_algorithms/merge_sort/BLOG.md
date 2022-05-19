@@ -2,10 +2,14 @@
 
 ## Merge Sort
 
+
+
 ## Steps of sorting 
+
+- Step 1: 
 
 ## Efficency
 
 - Time: O(log(n))
 
-- Space: O(1)
+- Space: O(n)
