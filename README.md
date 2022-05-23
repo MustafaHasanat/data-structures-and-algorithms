@@ -10,6 +10,7 @@
 | Data Structures | [Linked Lists](./linked-list/README.md) |
 | | [Stack and Queue](./stack-and-queue/README.md) |
 | | [Trees](./trees/README.md) |
+| | [Hash Table](./hash-table/README.md) |
 | Algorithims | [Insertion Sort](./sorting-algorithims/sorting_algorithms/insertion_sort/README.md) |
 | | [Merge Sort](./sorting-algorithims/sorting_algorithms/merge_sort/README.md) |
 
