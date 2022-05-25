@@ -2,6 +2,12 @@ from trees.trees import TNode, BinaryTree, BinaryTreeSearch
 import pytest
 
 
+#         A 
+#      /    \
+#    B       C
+#  /  \     /
+# D    E   F
+
 def test_pre_order(myTree):
     assert myTree.pre_order() == ['A', 'B', 'D', 'E', 'C', 'F']
     
@@ -53,6 +59,12 @@ def test_find_maximum_value_on_empty_tree():
 
 
 # ==================================
+
+#         A 
+#      /    \
+#    B       C
+#  /  \     /
+# D    E   F
 
 @pytest.fixture
 def myTree():

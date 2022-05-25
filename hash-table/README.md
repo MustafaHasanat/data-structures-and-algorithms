@@ -8,10 +8,11 @@ Hashtable is a list of lists. Each sub list contains pairs of items, the hashed 
 
 ---
 
-## Challenge
+## Challenges
 
 Implement a Hashtable lass with the methods: set, get, contains, keys, hash
 
+> [challenge 31](./hash_table/readme_files/challenge31/README.md)
 
 ---
 

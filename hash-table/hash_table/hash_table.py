@@ -76,25 +76,40 @@ class HashTable(object):
         return (sum_of_ascii*self.prime) % self.size
             
             
-         
+
+def word_trimmer(string):
+    """
+    Input: a string
+    Doing: delete any non alphanumeric characters in each word 
+    Output: trimmed list of words
+    """
+
+    list_words = "".join([char for char in string if ord(char) in [32, *list(range(65,91)), *list(range(97, 123)), *list(range(48,58))]])
+    
+    return list_words.lower().split()
+    
+
+def repeated_word(string):
+    """
+    Input: the input text
+    Doing: finds the first word to occur more than once in a string
+    Output: the first repeated word
+    """
+    
+    trimmed_words = word_trimmer(string) 
+    
+    hash_table = HashTable()
+    
+    for word in trimmed_words:
+        if hash_table.get(word):
+            return word
+        hash_table.set(word, len(word))
+        
+    return None
+
 
 
 if __name__ == '__main__':
-    hash_table = HashTable()
-    hash_table.set('cloud', 'AWS')
-    hash_table.set('could', 'rainy')
-    hash_table.set('name', 'python')
     
-    for item in enumerate(hash_table.map):
-        if item[1] is not None:
-            print(item) 
-            
-    print(hash_table.get("name"))
-    print(hash_table.get("cloud"))
-    print(hash_table.contains("name"))
-    print(hash_table.contains("red"))
-    print(hash_table.keys())
-    print(hash_table.hash("cloud"))
-
-
-
+    pass
+    
