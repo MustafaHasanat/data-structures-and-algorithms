@@ -14,6 +14,8 @@ Implement a Hashtable lass with the methods: set, get, contains, keys, hash
 
 > [challenge 31](./hash_table/readme_files/challenge31/README.md)
 
+> [challenge 32](./hash_table/readme_files/challenge32/README.md)
+
 ---
 
 ## Approach & Efficiency
