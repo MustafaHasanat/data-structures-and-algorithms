@@ -1,7 +1,8 @@
 from hash_table.hash_table import HashTable, repeated_word, word_trimmer
+from hash_table.tree_intersection import tree_intersection
 import pytest
 
-
+ 
 def test_hash_table(hash_table):
     
     assert hash_table.get("name") == [('name', 'python')]
@@ -27,7 +28,46 @@ def test_repeated_word():
     assert repeated_word(string2) == "it"
     assert repeated_word(string3) == "summer"
     assert repeated_word(string4) == None
- 
+
+
+def test_tree_intersection():
+    from hash_table.hash_table import TNode, BinaryTree
+    
+    nodeA = TNode(100)
+    nodeB = TNode(70)
+    nodeC = TNode(30)
+    nodeD = TNode(250)
+    nodeE = TNode(310)
+    nodeF = TNode(10)
+    
+    nodeA.left = nodeB
+    nodeA.right = nodeC
+    nodeB.left = nodeD
+    nodeB.right = nodeE
+    nodeC.left = nodeF
+    
+    tree1 = BinaryTree() 
+    tree1.root = nodeA
+
+    nodeA2 = TNode(100)
+    nodeB2 = TNode(45)
+    nodeC2 = TNode(36)
+    nodeD2 = TNode(20)
+    nodeE2 = TNode(310)
+    nodeF2 = TNode(10)
+    
+    nodeA2.left = nodeB2
+    nodeA2.right = nodeC2
+    nodeB2.left = nodeD2
+    nodeB2.right = nodeE2
+    nodeC2.left = nodeF2
+    
+    tree2 = BinaryTree() 
+    tree2.root = nodeA2
+
+    assert tree_intersection(tree1, tree2) == [100, 310, 10]
+    
+    
  
 @pytest.fixture
 def hash_table():
