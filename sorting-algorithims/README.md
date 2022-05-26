@@ -1,5 +1,7 @@
 # README files and Blogs for algorithims
 
+> [Back](../README.md)
+
 ---
 
 ## Insertion Sort 
@@ -21,4 +23,12 @@
 > [PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/18)
 
 ---
+
+## Quick Sort 
+
+> [readme](./sorting_algorithms/quick_sort/README.md)
+
+> [blog](./sorting_algorithms/quick_sort/BLOG.md)
+
+> [PR](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/29)
 
