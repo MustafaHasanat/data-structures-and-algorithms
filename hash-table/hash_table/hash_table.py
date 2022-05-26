@@ -9,9 +9,9 @@ class HashTable(object):
         self.prime = 19
         
         
-    def __getitem__(self, key):
-        idx = self.get_hash(key)
-        return self.map[idx][0][1]
+    # def __getitem__(self, key):
+    #     idx = self.hash(key)
+    #     return self.map[idx][0][1]
 
 
     def set(self, key, value):
@@ -74,7 +74,40 @@ class HashTable(object):
             sum_of_ascii += ord(char)
             
         return (sum_of_ascii*self.prime) % self.size
-            
+       
+       
+class TNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+
+    def pre_order(self):
+        """
+        Input: None
+        doing: traverse a tree (pre-order --> root-left-right)
+        output: print values of the nodes of the tree
+        """
+        
+        output = []
+        def _walk(node):
+            nonlocal output 
+            output.append(node.value)
+
+            if node.left:
+                _walk(node.left)
+
+            if node.right:
+                _walk(node.right)
+
+        _walk(self.root)
+                
+        return output
+     
             
 
 def word_trimmer(string):
@@ -109,7 +142,7 @@ def repeated_word(string):
 
 
 
+
 if __name__ == '__main__':
-    
     pass
     
