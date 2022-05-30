@@ -8,11 +8,6 @@ class HashTable(object):
         self.map = [None] * size
         self.prime = 19
         
-        
-    # def __getitem__(self, key):
-    #     idx = self.hash(key)
-    #     return self.map[idx][0][1]
-
 
     def set(self, key, value):
         """
