@@ -1,5 +1,6 @@
 from hash_table.hash_table import HashTable, repeated_word, word_trimmer
 from hash_table.tree_intersection import tree_intersection
+from hash_table.hashmap_left_join import hashmap_left_join
 import pytest
 
  
@@ -66,6 +67,20 @@ def test_tree_intersection():
     tree2.root = nodeA2
 
     assert tree_intersection(tree1, tree2) == [100, 310, 10]
+    
+    
+def test_left_join_hashmap():
+    hash1 = HashTable()
+    hash2 = HashTable()
+
+    for i, j in zip(["diligent", "fond", "guide", "outfit", "wrath"], ["employed", "enamored", "usher", "garb", "anger"]):
+        hash1.set(i, j)
+    
+    for i, j in zip(["diligent", "fond", "guide", "flow", "wrath"], ["idle", "averse", "follow", "jam", "delight"]):
+        hash2.set(i, j)
+        
+    assert hashmap_left_join(hash1, hash2) == [['wrath', 'anger', 'delight'], ['outfit', 'garb', None], ['diligent', 'employed', 'idle'], ['guide', 'usher', 'follow'], ['fond', 'enamored', 'averse']]
+    
     
     
  
