@@ -4,6 +4,8 @@
 
 ## Pull Requests
 
+> [PR 1](https://github.com/Mustfa1999/data-structures-and-algorithms/pull/31)
+
 ---
 
 ## Challenges
@@ -16,8 +18,11 @@ add node, add edge, get nodes, get neighbors, size
 
 ## Approach & Efficiency
 
-I have created a class with initializing attributes 
----
+I have created a 3 class for creating the Node, Edge, and Graph.
+Each one has a special initialized attributes to implement it:
+Node: Vlaue
+Edge: Value, Weight
+Graph: adjacency_list
 
 ## API
 

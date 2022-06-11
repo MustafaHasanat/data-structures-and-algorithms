@@ -136,31 +136,4 @@ class Graph:
         
 
 if __name__ == '__main__':
-    
-    graph = Graph()
-    
-    a=graph.add_node('A')
-    b=graph.add_node('B')
-    c=graph.add_node('C')
-    d=graph.add_node('D')
-    e=graph.add_node('E')
-    f=graph.add_node('F')
-    
-    graph.add_edge(a, b)
-    graph.add_edge(a, c)
-
-    graph.add_edge(b, c)
-    graph.add_edge(b, e)
-    graph.add_edge(b, d)
-    
-    graph.add_edge(c, e)
-    
-    graph.add_edge(d, e)
-    graph.add_edge(d, f)
-    
-    graph.add_edge(e, f)
-     
-    
-    print(graph.get_neighbors(a))
-
-        
+    pass

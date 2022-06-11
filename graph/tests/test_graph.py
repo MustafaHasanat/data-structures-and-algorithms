@@ -25,12 +25,12 @@ def test_all_neighbors_method_with_weights():
     
     graph = Graph()
     
-    a=graph.add_node('A')
-    b=graph.add_node('B')
-    c=graph.add_node('C')
-    d=graph.add_node('D')
-    e=graph.add_node('E')
-    f=graph.add_node('F')
+    a = graph.add_node('A')
+    b = graph.add_node('B')
+    c = graph.add_node('C')
+    d = graph.add_node('D')
+    e = graph.add_node('E')
+    f = graph.add_node('F')
     
     all_nodes = [a, b, c, d, e, f]
     
@@ -57,12 +57,13 @@ def test_all_neighbors_method_with_weights():
 
 def test_graph_with_one_node():
     graph = Graph()
-    a=graph.add_node('A')
-    graph.add_edge(a, b)
+    graph.add_node('A')
+    assert graph.get_node() == ['A']
     
     
 def test_empty_graph():
     graph = Graph()
+    assert graph.get_node() == []
 
     
     
@@ -70,12 +71,12 @@ def test_empty_graph():
 def graph():
     graph = Graph()
     
-    a=graph.add_node('A')
-    b=graph.add_node('B')
-    c=graph.add_node('C')
-    d=graph.add_node('D')
-    e=graph.add_node('E')
-    f=graph.add_node('F')
+    a = graph.add_node('A')
+    b = graph.add_node('B')
+    c = graph.add_node('C')
+    d = graph.add_node('D')
+    e = graph.add_node('E')
+    f = graph.add_node('F')
     
     graph.add_edge(a, b)
     graph.add_edge(a, c)
