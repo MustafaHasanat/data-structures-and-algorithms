@@ -20,9 +20,20 @@ add node, add edge, get nodes, get neighbors, size
 
 I have created a 3 class for creating the Node, Edge, and Graph.
 Each one has a special initialized attributes to implement it:
-Node: Vlaue
-Edge: Value, Weight
-Graph: adjacency_list
+
+Node Class:
+
+- It creates a Graph Node and its object takes only one argument (value) and assign it as the value of the node
+
+Edge Class: 
+
+- It creates a Graph Edge and its object takes two arguments. The (Value) which is the node itself, and the (Weight) which is the wieght of that edge
+
+Graph Class: 
+
+- It creates a Graph by initializing an adjacency list that represent the whole graph. 
+
+- The Adjacency list is a list of pairs that mentions all connections (edges) between nodes. Here, it is represented by a dictionary where the key of the pair is a Node, and the value is a list that has all edges that are connecting this Node with others (this list is initialized as an empty list)
 
 ## API
 
